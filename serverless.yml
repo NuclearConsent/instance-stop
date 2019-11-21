@@ -6,10 +6,10 @@ provider:
 
 functions:
   rds:
-    handler: functions/rds.handler
+    handler: functions/rdsStop.handler
     events:
       - schedule: cron(0 12 * * ? *)
   ec2:
-    handler: functions/ec2.handler
+    handler: functions/ec2Stop.handler
     events:
       - schedule: cron(0 12 * * ? *)
