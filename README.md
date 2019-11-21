@@ -1,5 +1,5 @@
 # instance-stop
-A collection of Lambda scripts that can automatically stop EC2 &amp; RDS instances at a specific time.
+A collection of Lambda functions that can automatically stop EC2 &amp; RDS instances at a specific time.
 
 ## Deploy
 Deploy with [serverless](https://serverless.com/)
