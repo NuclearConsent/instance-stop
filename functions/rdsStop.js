@@ -33,4 +33,4 @@ function listTags(arn, id) {
             }
         }
     });
-}
+};
