@@ -50,6 +50,3 @@ trying to do, your system, and steps to reproduce the problem.
 For bug reports or feature requests, please 
 [open an issue](../issues). 
 You are welcome to [contribute](#contribute).
-
-Official support from Trend Micro is not available. Individual contributors may be 
-Trend Micro employees, but are not official support.
