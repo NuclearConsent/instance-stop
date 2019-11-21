@@ -20,7 +20,7 @@ function listTags(arn, id) {
             // Loop through all tags
             for (let b = 0; b < data.TagList.length; b++) {
                 // If if tags match key/value 
-                if (data.TagList[b].Key == 'code' && data.TagList[b].Value == 'ds2020') {
+                if (data.TagList[b].Key == process.env.RDS_KEY && data.TagList[b].Value == process.env.RDS_VALUE) {
                     b++;
                     break;
                 } else {

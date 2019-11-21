@@ -7,9 +7,15 @@ provider:
 functions:
   rds:
     handler: functions/rdsStop.handler
+    environment:
+      RDS_KEY: code
+      RDS_VALUE: ds2020
     events:
       - schedule: cron(0 12 * * ? *)
   ec2:
     handler: functions/ec2Stop.handler
+    environment:
+      EC2_Key: code
+      EC2_Value: ds2020
     events:
       - schedule: cron(0 12 * * ? *)
