@@ -3,6 +3,15 @@ service: stopinstances
 provider:
   name: aws
   runtime: nodejs12.x
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - rds:DescribeDBInstances
+        - rds:ListTagsForResource
+        - rds:StopDBInstance
+        - ec2:DescribeInstances
+        - ec2:StopInstances
+      Resource: "*"
 
 functions:
   rds:
@@ -11,11 +20,12 @@ functions:
       RDS_KEY: code
       RDS_VALUE: ds2020
     events:
-      - schedule: cron(0 12 * * ? *)
+      - schedule: cron(0 1 * * ? *)
   ec2:
     handler: functions/ec2Stop.handler
     environment:
       EC2_Key: code
       EC2_Value: ds2020
     events:
-      - schedule: cron(0 12 * * ? *)
+      - schedule: cron(0 1 * * ? *)
+
