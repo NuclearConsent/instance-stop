@@ -1,0 +1,15 @@
+service: stopinstances
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  rds:
+    handler: functions/rds.handler
+    events:
+      - schedule: cron(0 12 * * ? *)
+  ec2:
+    handler: functions/ec2.handler
+    events:
+      - schedule: cron(0 12 * * ? *)
