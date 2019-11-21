@@ -19,6 +19,7 @@ functions:
     environment:
       RDS_KEY: code
       RDS_VALUE: ds2020
+    timeout: 30
     events:
       - schedule: cron(0 1 * * ? *)
   ec2:
@@ -26,6 +27,7 @@ functions:
     environment:
       EC2_Key: code
       EC2_Value: ds2020
+    timeout: 30
     events:
       - schedule: cron(0 1 * * ? *)
 
