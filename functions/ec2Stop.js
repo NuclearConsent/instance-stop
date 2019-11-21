@@ -10,7 +10,7 @@ exports.handler = (context) => {
         for (let a = 0; a < data.Reservations.length; a++) {
             // Loop through tags per instance
             for (let b = 0; b < data.Reservations[a].Instances[0].Tags.length; b++) {
-                if (data.Reservations[a].Instances[0].Tags[b].Key == 'code' && data.Reservations[a].Instances[0].Tags[b].Value == 'ds2020') {
+                if (data.Reservations[a].Instances[0].Tags[b].Key == process.env.EC2_KEY && data.Reservations[a].Instances[0].Tags[b].Value == process.env.EC2_VALUE) {
                     // Skip if instance has correct tag
                     a++;
                     break;
